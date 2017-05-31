@@ -1,0 +1,593 @@
+/*
+Theme Name: custom-theme
+Theme URI: https://wordpress.org/themes/custom-theme/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: custom-theme
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #31b4bb !important;
+}
+
+a {
+    color: #422b01;
+    text-decoration: none;
+}
+
+a:visited {}
+
+
+a:focus {
+    outline: thin dotted;
+}
+
+p{
+    line-height: 25px;
+}
+p.default{ width: 100%;font-size: 16px; }
+h1.default{font-size: 39px;}
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+    color: #333;
+}
+
+body {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    background-color: white;
+}
+.left {
+    float: left;
+}
+.bg-white{
+    background-color:#f3f5f3;
+}
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+.bold {
+    font-weight: bold;
+}
+.no-space{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.clear {
+    clear: both;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.color-white{
+    color:white !important;
+}
+.padding-img{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.color-black{
+    color:black !important;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection {
+    background: #fe57a1;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #f0a735;
+    color: #fff;
+    text-shadow: none;
+}
+.menu-desktop{
+  display: block;
+}
+.menu-mobile{
+  display: none;
+}
+
+/* =============================================================================
+   Desktop Nav
+   ========================================================================== */
+.menu-header{
+  float: right;
+}
+.menu-header > li {
+    list-style: none !important;
+    font-size: 24px;
+    width: auto;
+    margin-left: 45px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    float:left;
+}
+
+.menu-header > li > a {
+    color: #06663a;
+    display: block;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    float: none;
+    font-weight: 600;
+    width: 100%;
+}
+.menu-header > li > a:hover {
+    color: #deb30e !important;
+}
+
+/* =============================================================================
+   Mobile Nav
+   ========================================================================== */
+.menu-header-mobile > li {
+    width: auto;
+    list-style: none !important;
+    font-size: 24px;
+    margin-right: 25px;
+    max-width: 190px;
+    margin-top: 12px;
+}
+
+.menu-header-mobile > li > a {
+    color: white;
+}
+/* Navigation Menu - Background */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #366753;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width: 200px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 10px;
+
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+  color: lime !important;
+}
+.banner > h1{
+  margin-bottom: 0px;
+  font-size: 37px;
+  line-height: 55px;
+}
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  padding: 0px !important;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 4em;
+  background-image: white;
+  background-size: 200%;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  z-index: 2;
+  color:white;
+  cursor: pointer;
+}
+.container{
+  background-color:white;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom:30px;
+}
+/* Make the Magic Happen */
+.site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked +  label{
+  left: 215px;
+}
+
+.nav-trigger:checked ~ div.site-wrap{
+  position: relative;
+  left: 200px !important;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5) !important;
+}
+/* Micro reset */
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+img.custom-logo {
+    width: 280px;
+    height: 95px;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+.color-blue {
+    color:#5f60ff;
+}
+.color-gray {
+    color: #888585;
+    margin-bottom: 17px !important;
+}
+.color-white {
+    color: white;
+}
+
+.project{
+   margin-top: 40px;margin-bottom: 40px;
+}
+img.cover{
+    width: 100%;
+    height: 100%
+}
+img.cover-service{
+    width: 90%;
+    height: 90%  
+}
+.hidden {
+    display: none;
+}
+/* Home CSS */
+.activities > a > img{
+    max-width: 130px;
+}
+.home > h2{
+  color:#06663a;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 33px;
+  margin-bottom: 80px;
+}
+.activities > a > h2{
+  color:#037943;
+  font-size: 23px;
+  font-weight: 600;  
+}
+/* Footer CSS */
+.footer-content{
+    margin-top: 40px;
+    margin-bottom: 5px; 
+}
+.footer-content > p{
+    color: #ececec;
+    font-size: 19px;
+}
+/* Inner Pages CSS */
+.page-content{
+  background-color: white;
+}
+.page-content > h1{
+  color: #06663a;
+  text-align: center;
+  font-family: serif;
+  font-size: 50px;
+  margin-top:30px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.page-description > h2{
+  color: #06663a;
+  font-size: 29px;
+  font-weight: 400;
+}
+.page-description > p{
+  color: #06663a;
+}
+.page-description > a{
+  color: #06663a;
+  font-size: 22px;
+  font-weight: 600;
+}
+.fs-inner{
+  padding-right: 10%;
+  padding-left: 10%;
+}
+/* Screen Layout CSS */
+@media (max-width: 2560px) {
+    .menu-desktop{
+      display: block;
+    }
+    .menu-mobile{
+      display: none;
+    }
+}
+@media (max-width: 1199px) {
+  .activities > a > h2 {
+      color: #037943;
+      font-size: 19px;
+      font-weight: 600;
+  }
+  img.workshop{
+      margin-right: 40px !important;
+  }
+}
+@media (max-width: 1024px){
+  img.workshop {
+    margin-right: 29px !important;
+  }
+  .menu-header > li {
+      list-style: none !important;
+      font-size: 23px;
+      width: auto;
+      margin-left: 28px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: table-cell;
+      vertical-align: middle;
+      float: left;
+  }
+}
+@media (max-width: 1018px) {
+  .activities > a > h2 {
+      color: #037943;
+      font-size: 19px;
+      font-weight: 600;
+  }
+  .activities-center{
+    display: none !important;
+  }
+  .activities-container,
+  .activities-container > div.activities {
+    width: 100% !important;
+    float: none !important;
+    position:relative;
+    top:0px !important;
+    left: 0px !important;
+    bottom: 0px !important;
+    text-align: center !important; 
+  }
+  .activities > a > img {
+      max-width: 190px !important;
+      margin-bottom: 20px;
+  }
+  .activities-container > div.activities {
+    margin-bottom: 80px !important;
+  }
+  img.workshop{ margin-right: 0px !important;  }
+  .activities > a > h2 {
+    margin: 0px !important;
+  }
+  .menu-header > li > a {
+      color: #06663a;
+      display: block;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-align: center;
+      float: none;
+      font-weight: 600;
+      width: 100%;
+  }
+  .menu-header > li {
+      list-style: none !important;
+      font-size: 24px;
+      float: right;
+      width: auto;
+      margin-left: 30px;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .header-logo{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .footer-content > p{
+    padding-left:20px;
+    padding-right: 20px;
+  }
+  .page-content > div.col-md-12 > div.row > .col-md-3{
+    width: 100% !important;
+    text-align: left !important;
+  }
+  .page-description{
+    padding-left: 0px !important;
+  }
+}
+@media (max-width: 991px) {
+    .menu-desktop{
+      display: none;
+    }
+    .menu-mobile{
+      display: block;
+    }
+    img.custom-logo {
+        width: 133px;
+        height: 45px;
+    }
+    .col-xs-1.left.header-logo {
+        padding-top: 5px;
+    }
+    .container {
+        background-color: white;
+        padding-left: 25px;
+        padding-right: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+
+/* Tablet Layout */
+@media (max-width: 1023px) {
+  
+
+}
+
+/* Mobile Phone Layout */
+@media (max-width: 768px){
+  .page-content > div.col-md-12 > div.row > .col-md-3{
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .page-content{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .phone-session{
+    margin-top: 15px !important;
+    margin-bottom: 5px !important;
+  }
+  img.page{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+  }
+  .page-content > h1 {
+      color: #06663a;
+      text-align: center;
+      font-family: serif;
+      font-size: 33px;
+      font-weight: 600;
+  }
+  .page-description > h2 {
+      color: #06663a;
+      font-size: 22px;
+      font-weight: 400;
+      text-align: center;
+  }
+  .page-description > p {
+      color: #06663a;
+      font-size: 16px;
+      text-align: justify;
+  }
+}
+@media (max-width: 480px) {
+  .home > h2 {
+      color: #06663a;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 20px;
+      font-weight: 600;
+  }   
+  .footer-content > p{
+    padding-left:20px;
+    padding-right: 20px;
+    font-size: 12px;
+  }
+}
