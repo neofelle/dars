@@ -41,7 +41,7 @@ Template Name: Articles
                                     </div>
                                     <div class="col-md-9 left page-description" style="padding-top:5px;padding-right: 25px;">
                                         <h2 style="margin-bottom: 0px;"><?php echo get_the_title(); ?></h2>
-                                        <p class="date">June 02, 2017 4:15 PM</p>
+                                        <p class="date"><?php echo date('F d, Y',strtotime($post->post_date)); ?></p>
                                         <p><?php echo the_excerpt(); ?></p>
                                          <a class="read-more        " href="<?php echo get_permalink(); ?>">Read More <i class="fa fa-angle-double-right r-icon" aria-hidden="true"></i></a>
                                     </div>

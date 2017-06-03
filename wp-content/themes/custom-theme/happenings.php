@@ -28,6 +28,7 @@ Template Name: Happenings
                         if ( $the_query->have_posts() ) {                    
                         while ( $the_query->have_posts() ) {                    
                         $the_query->the_post();
+                        $cf_event_date = get_post_meta($post->ID, 'event_date', $single);  
                     ?>            
                         <div class="col-md-12 clear service-page-block" style="margin-bottom: 25px;">
                                     <div class="col-md-3 left pull-left">
@@ -45,7 +46,7 @@ Template Name: Happenings
                                     </div>
                                     <div class="col-md-9 left page-description" style="padding-top:5px;padding-right: 25px">
                                         <h2 style="margin-bottom: 0px;"><?php echo get_the_title(); ?></h2>
-                                        <p class="date"><?php echo date('F d, Y',strtotime($post->post_date)); ?></p>
+                                        <p class="date">When : <?php echo $cf_event_date; ?></p>
                                         <p><?php echo the_excerpt(); ?></p>
                                          <a class="read-more        " href="<?php echo get_permalink(); ?>">Read More <i class="fa fa-angle-double-right r-icon" aria-hidden="true"></i></a>
                                     </div>

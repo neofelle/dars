@@ -28,7 +28,9 @@
 
 
                     <div class="col-md-12 left page-description" style="padding-left:60px;">
+                    <?php if( $image[0] != "" ) { ?>
                     <div class="left" style="margin-right: 20px;"><img class="page" src="<?php echo $image[0]; ?>"/></div>
+                    <?php } ?>
                     <?php 
                     get_template_part( 'template-parts/page/content', 'page' );
                     the_content();
