@@ -39,7 +39,8 @@ Template Name: Happenings
                                             $a_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
                                             $image = $a_image['0'];
                                         }else{
-                                            $image = "http://localhost/luke/git/dars_listening/wp-content/uploads/2017/05/inner-1.png";
+                                            $upload_dir = wp_upload_dir(); 
+                                            $image = $upload_dir['baseurl'] . "/2017/05/inner-1.png";
                                         }
                                         ?>
                                         <img style="width: 95%;" src="<?php echo $image; ?>">
